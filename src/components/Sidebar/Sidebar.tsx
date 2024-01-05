@@ -16,7 +16,7 @@ export const Sidebar = () => {
             h-screen fixed bg-white
             ease-in-out duration-300
             ${expanded ? 'w-64' : 'w-18'}
-            ${expanded ? 'max-md:h-fit' : 'max-md:h-screen'}
+            ${expanded ? 'max-md:h-fit' : 'max-md:h-8'}
             max-md:h-10 max-md:w-screen
          `}
          onMouseEnter={() => {
