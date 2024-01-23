@@ -7,20 +7,23 @@ export interface SidebarFooterProps {
    }[]
 }
 
+const stylesheet = {
+   container: 'h-fit whitespace-nowrap flex flex-col text-black-03 gap-2 mb-4 max-md:mb-0 max-md:flex-row max-md:justify-evenly',
+   expanded: '',
+   contracted: 'invisible',
+   items: 'w-fit font-semibold transition-all duration-500 hover:underline'
+}
+
 export const SidebarFooter = ({ sidebarFooterItems }: SidebarFooterProps) => {
    const { expanded } = useSidebar()
 
    return (
       <div
-         className={`
-            h-fit whitespace-nowrap ${
-               expanded ? '' : 'invisible'
-            } flex flex-col text-[#2F2F2F] gap-2 mb-9 max-md:mb-0 max-md:flex-row max-md:justify-evenly
-         `}
+         className={`${stylesheet.container} ${expanded ? stylesheet.expanded : stylesheet.contracted}`}
       >
          {sidebarFooterItems.map((SidebarFooterItem, index) => (
             <a
-               className="w-fit font-semibold transition-all duration-500 hover:underline"
+               className={stylesheet.items}
                key={index}
                href={SidebarFooterItem.sidebarItemPath}
             >
