@@ -33,7 +33,7 @@ export const Sidebar = () => {
             setExpanded(true)
          }}
          onMouseLeave={() => {
-            setExpanded(true)
+            setExpanded(false)
          }}
       >
          <MenuCollapseBtn {...SidebarConfig.MenuCollapseBtnConfig} />
